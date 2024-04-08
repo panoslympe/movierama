@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: #FBF9F1;
+  --main-bg-color: #fbf9f1;
 }
 
 * {
@@ -20,7 +20,8 @@ body {
   position: relative;
   padding: 15px 30px;
   background-color: var(--main-bg-color);
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -50,7 +51,12 @@ body {
 .search input {
   height: 50%;
   padding-right: 35px;
-  outline: 0;
+  outline: none;
+  width: 400px;
+  border-radius: 20px;
+  border: 2px solid black;
+  text-indent: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .search-form > button {
@@ -75,21 +81,27 @@ body {
   /* justify-content: space-around; */
 }
 
-.movies-title{
-    font-size: 50px;
-    margin: 10px 110px;
-    text-align: center;
+.movies-title {
+  font-size: 50px;
+  margin: 10px 110px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .movie-container {
-  border: 2px solid white;
+  border: 2px solid black;
   width: 185px;
   height: 475px;
-  overflow: scroll;
+  overflow: hidden;
   border-radius: 20px;
   color: black;
   background-color: white;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info > *:not(.movie-title) {
+  color: rgb(122, 122, 122);
 }
 
 .movie-container::-webkit-scrollbar,
@@ -114,6 +126,7 @@ body {
 .movie-title {
   font-size: 20px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -124,77 +137,83 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .modal {
-    transform: scale(0.5);
-    background-color: var(--main-bg-color);
-    padding: 20px;
-    display: block;
-    width: 60%;
-    height: 70%;
-    border: 5px solid black;
-    border-radius: 20px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: scale-up 0.5s ease-in-out forwards;
-    overflow: scroll;
+  transform: scale(0.5);
+  background-color: var(--main-bg-color);
+  padding: 20px;
+  display: block;
+  width: 60%;
+  height: 70%;
+  border: 5px solid black;
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: scale-up 0.5s ease-in-out forwards;
+  overflow: scroll;
 }
 
 .modal-info-hero {
-    display: flex;
-    gap: 50px;
+  display: flex;
+  gap: 50px;
 }
 
 .modal-info-title {
-    font-size: 35px;
-    font-weight: 700;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
+  font-size: 35px;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.movie-overview {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Truncate after 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .reviews {
-    height: 390px;
-    overflow: scroll;
-    width: 100%;
-    overflow-x: hidden;
+  height: 390px;
+  overflow: scroll;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .review-container {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .author {
-    text-decoration: underline;
-    font-weight: 700;
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 .modal button {
-    position: absolute;
-    right: 20px;
-    top:20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 .similar-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .similar-container .movie-container {
-    border-color: black;
+  border-color: black;
 }
 
 .no-video {
-    width: 100%;
+  width: 100%;
 }
 
 @keyframes scale-up {
-    from {
-      transform: translate(-50%, -50%) scale(0.5);
-    }
-    to {
-      transform: translate(-50%, -50%) scale(1);
-    }
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
   }
-  
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
